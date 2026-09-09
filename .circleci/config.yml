@@ -1,0 +1,24 @@
+version: 2.1
+
+jobs:
+  verify-renovate-config:
+    parameters:
+      config-file:
+        description: Path to the Renovate config file to validate
+        type: string
+    docker:
+      - image: renovate/renovate:latest
+    steps:
+      - checkout
+      - run:
+          name: "Check Renovate config << parameters.config-file >>"
+          environment:
+            RENOVATE_GLOBAL_EXTENDS: '["global:safeEnv"]'
+          command: renovate-config-validator --strict --no-global << parameters.config-file >>
+
+workflows:
+  main:
+    jobs:
+      - verify-renovate-config:
+          name: verify-renovate/default
+          config-file: default.json
