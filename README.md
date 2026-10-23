@@ -29,7 +29,7 @@ Add a `renovate.json` to the root of your repo:
 - Gives `golangci-lint` its own PR, since lint upgrades tend to introduce new failures.
 - Proposes `github.com/circleci-functions/*` updates immediately, in their own PR, so
   `toolkit` releases reach the `setup-*` repos without waiting for the weekly batch.
-- Runs `go mod tidy` after updating, and sets `GOPRIVATE` for the org's private modules.
+- Runs `go mod tidy` after updating.
 - Ignores `vendor/`, `node_modules/`, `testdata/` and `internal/testing/` — test fixtures
   are pinned on purpose.
 

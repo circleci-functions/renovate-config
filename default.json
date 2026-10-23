@@ -1,9 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "enabled": true,
-  "env": {
-    "GOPRIVATE": "github.com/circleci-functions/*"
-  },
   "extends": [
     "config:recommended",
     "mergeConfidence:all-badges",
