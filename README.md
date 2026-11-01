@@ -42,7 +42,7 @@ pipeline parameters in `.circleci/config.yml`, via a trailing comment:
 parameters:
   node-version:
     type: string
-    default: "26.4.0" # renovate: datasource=node-version depName=node
+    default: "26.12.1" # renovate: datasource=node-version depName=node
 ```
 
 The version must be quoted, and both `#` and `//` comments work. See the
